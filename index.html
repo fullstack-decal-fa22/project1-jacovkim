@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Jacob Taegon Kim" />
+        <meta name="description" content="Personal Website" />
+        <title>jacovkim</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet"/>
+    </head>
+    <body>
+        <nav>
+            <div class="logo">
+                <i class='bx bx-menu menu-icon'></i>
+                <span class="logo-name"></span>
+            </div>
+            <div class="sidebar">
+                <div class="logo">
+                    <i class='bx bx-menu menu-icon'></i>
+                    <span class="logo-name">Menu</span>
+                </div>
+                <div class="sidebar-content">
+                    <ul class="lists">
+                        <li class="list">
+                            <a href="#" class="nav-link">
+                                <span class="link">Home</span>
+                            </a>
+                        </li>
+                        <li class="list">
+                            <a href="#" class="nav-link">
+                                <span class="link">About</span>
+                            </a>
+                        </li>
+                        <li class="list">
+                            <a href="#" class="nav-link">
+                                <span class="link">Work</span>
+                            </a>
+                        </li>
+                        <li class="list">
+                            <a href="#" class="nav-link">
+                                <span class="link">Message</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section class="overlay"></section>
+
+        <script>
+            const navBar = document.querySelector("nav"),
+                  menuBtns = document.querySelectorAll(".menu-icon"),
+                  overlay = document.querySelector(".overlay");
+                  
+
+                  menuBtns.forEach((menuBtn) => {
+                      menuBtn.addEventListener("click", () => {
+                          navBar.classList.toggle("open");
+                      });
+                  });
+
+                  overlay.addEventListener("click", () => {
+                    navBar.classList.remove("open");
+                  });
+        </script>
+
+        <section class="card-list">
+            <article class="card">
+                <header class="card-header">
+                    <h2>About</h2>
+                    <p>
+                        Hello, I am currently a sophomore in UC Berkeley, studying computer science and data science.
+                    </p>
+                </header>
+            </article>
+
+            <article class="card">
+                <header class="card-header">
+                    <h2>Work</h2>
+                </header>
+            </article>
+
+            <article class="card">
+                <header class="card-header">
+                    <h2>
+                        Send me a message :)
+                    </h2>
+                </header>
+            </article>
+
+
+        </section>
+    </body>
+
+    </html>
