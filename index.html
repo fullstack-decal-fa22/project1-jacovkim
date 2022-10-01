@@ -17,14 +17,14 @@
                                 Welcome to my personal website </a>
                         </div>
                     <ul class="lists">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Work</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#work">Work</a></li>
                         <li>
                             <a href="#">More</a>
                             <ul class="more-sub-menu sub-menu">
-                                <li><a href="#">Message</a></li>
-                                <li><a href="#">Books</a></li>
-                                <li><a id="long" href="#">Random Things</a></li>
+                                <li><a href="#contacts">Contacts</a></li>
+                                <li><a href="#books">Books</a></li>
+                                <li><a href="#">Random Things</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -33,7 +33,7 @@
         </nav>
 
         <div class="container">
-            <div class="left">
+            <section class="left">
                 <p>
                     I am currently a sophomore in UC Berkeley studying Data Science.
                     Lately, I've been interested in the applications of machine learning 
@@ -45,23 +45,28 @@
                     <br>
                     Please feel free to say hi.
                 </p>
-            </div>
-
-
-            <div class="right">
-                <div id="about">
+            </section>
+    
+            <section class="right">
+                <section id="home"></section>
+                <section id="about">
                     <p>I am currently a sophomore in UC Berkeley studying Data Science.
                         Lately, I've been interested in the applications of machine learning 
                         in cancer prediction and prognosis.</p>
-                </div>
-                <div id="work">
-                    <p>I am currently doing a research under DARE program advised by ...</p>
-                </div>
-            </div>
-        </div>
-
-        <section class="overlay"></section>
-
+                    </section>
+                <section id="work">
+                    <p>I am currently doing a research under Data Discover program advised by ...</p>
+                </section>
+                <section id="books">
+                    <p>Some of my favorite books are ...</p>
+                </section>
+                <section id="contacts">
+                    <p>email: jacobkim@berkeley.edu<br>
+                        ig: jacovkim</p>
+                </section>
+            </section>
+    </div>
+    
         <script>
             const navBar = document.querySelector("nav"),
                   menuBtns = document.querySelectorAll(".menu .lists li"),
@@ -71,10 +76,6 @@
                       menuBtn.addEventListener("click", () => {
                           navBar.classList.toggle("open");
                       });
-                  });
-
-                  overlay.addEventListener("click", () => {
-                    navBar.classList.remove("open");
                   });
                 </script>
     
