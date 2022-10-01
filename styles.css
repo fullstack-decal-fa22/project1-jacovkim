@@ -40,8 +40,8 @@ nav .menu {
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  padding: 0 10px;
-  margin-top: 15px;
+  padding: 10px 10px;
+  margin-top: 10px;
 }
 
 nav .menu .logo a {
@@ -81,7 +81,9 @@ nav .menu .lists li {
   align-items: center;
   justify-content: space-between;
   list-style: none;
-  padding: 0 30px;
+  padding: 10px 30px;
+  height: 100%;
+  width: 100%;
 }
 
 nav .menu .lists li a {
@@ -98,12 +100,13 @@ nav .menu .lists li a {
 }
 nav .menu .lists li .sub-menu {
   position: absolute;
-  top: 16px;
-  left: -10px;
+  top: 30px;
+  left: 0;
   line-height: 40px;
   background: #fff;
   display: none;
   z-index: 2;
+  border: 0.1px solid #000;
 }
 
 nav .menu .lists li:hover .sub-menu {
@@ -123,60 +126,47 @@ nav .menu .lists li:hover .sub-menu {
 }
 
 .container {
+  display: grid;
+  position: absolute;
   margin-top: 70px;
-  height: 100vh;
+  height: 100%;
   width: 100%;
+  grid-template-columns: 1fr 3fr;
 }
 .left {
-  padding: 20px 20px;
+  margin-top: 4px;
+  padding: 30px 40px;
   float: left;
-  width: 33.3%;
+  width: 30vw;
   background: #fff;
-  height: 100%;
+  height: 100vh;
   overflow: scroll;
   border: 0.1px solid #000;
-  text-align: center;
   overflow-wrap: break-word;
-}
-
-.middle {
-  padding: 20px 20px;
-  float: left;
-  width: 33.3%;
-  background: #fff;
-  height: 100%;
-  overflow: scroll;
-  border: 0.1px solid #000;
-  text-align: center;
-  overflow-wrap: break-word;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  line-height: 1.6;
 }
 
 .right {
-  padding: 20px 20px;
+  margin-top: 4px;
+  padding: 30px 40px;
   float: left;
-  width: 33.3%;
   background: #fff;
-  height: 100%;
+  height: 100vh;
+  width: 100%;
   overflow: scroll;
   border: 0.1px solid #000;
-  text-align: center;
+  text-align: left;
   overflow-wrap: break-word;
 }
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: -100%;
-  height: 1000vh;
-  width: 200%;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.4s ease;
-  background: rgba(0, 0, 0, 0.3);
+nav.open ~ .container .left {
+  width: 20vw;
+  pointer-events: auto;
 }
 
-nav.open ~ .overlay {
-  opacity: 1;
-  left: 260px;
+nav.open ~ .container .right {
+  width: 1000vw;
   pointer-events: auto;
 }

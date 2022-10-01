@@ -13,7 +13,7 @@
             <div class="menu">
                 <div class="menu-lists">
                     <div class="logo">
-                        <a href="#"> Hello <br>
+                        <a href="index.html"> Hello <br>
                                 Welcome to my personal website </a>
                         </div>
                     <ul class="lists">
@@ -24,7 +24,7 @@
                             <ul class="more-sub-menu sub-menu">
                                 <li><a href="#">Message</a></li>
                                 <li><a href="#">Books</a></li>
-                                <li><a href="#">Ranndom Thoughts</a></li>
+                                <li><a id="long" href="#">Random Things</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -34,11 +34,29 @@
 
         <div class="container">
             <div class="left">
-            </div>
-            <div class="middle">
+                <p>
+                    I am currently a sophomore in UC Berkeley studying Data Science.
+                    Lately, I've been interested in the applications of machine learning 
+                    in cancer prediction and prognosis.
+                    <br>
+                    <br>
+                    I am always excited for learning new things, and meeting new people.
+                    <br>
+                    <br>
+                    Please feel free to say hi.
+                </p>
             </div>
 
+
             <div class="right">
+                <div id="about">
+                    <p>I am currently a sophomore in UC Berkeley studying Data Science.
+                        Lately, I've been interested in the applications of machine learning 
+                        in cancer prediction and prognosis.</p>
+                </div>
+                <div id="work">
+                    <p>I am currently doing a research under DARE program advised by ...</p>
+                </div>
             </div>
         </div>
 
@@ -46,10 +64,9 @@
 
         <script>
             const navBar = document.querySelector("nav"),
-                  menuBtns = document.querySelectorAll(".menu .submenu"),
-                  overlay = document.querySelector(".overlay");
+                  menuBtns = document.querySelectorAll(".menu .lists li"),
+                  overlay = document.querySelector(".container .left");
                   
-
                   menuBtns.forEach((menuBtn) => {
                       menuBtn.addEventListener("click", () => {
                           navBar.classList.toggle("open");
