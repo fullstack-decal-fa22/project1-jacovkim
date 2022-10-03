@@ -17,8 +17,8 @@
                                 Welcome to my personal website </a>
                         </div>
                     <ul class="lists">
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#work">Work</a></li>
+                        <li class="about"><a href="#about">About</a></li>
+                        <li class="work"><a href="#work">Work</a></li>
                         <li>
                             <a href="#">More</a>
                             <ul class="more-sub-menu sub-menu">
@@ -34,6 +34,14 @@
 
         <div class="container">
             <section class="left">
+
+                <div class="overlay-work">
+                    <ul class="left-nav">
+                        <li><a href="#contacts">Personal Projects</a></li>
+                        <li><a href="#contacts">Research</a></li>
+                        <li><a href="#contacts">Coursework</a></li>
+                    </ul>
+                </div>
                 <p>
                     I am currently a sophomore in UC Berkeley studying Data Science.
                     Lately, I've been interested in the applications of machine learning 
@@ -61,21 +69,35 @@
                     <p>Some of my favorite books are ...</p>
                 </section>
                 <section id="contacts">
-                    <p>email: jacobkim@berkeley.edu<br>
-                        ig: jacovkim</p>
+                    <p><a href="mailto:someone@yoursite.com">email: jacobkim@berkeley.edu</a><br>
+                        <a href="instagram.com/jacovkim">ig: jacovkim</a></p>
                 </section>
             </section>
     </div>
     
         <script>
             const navBar = document.querySelector("nav"),
-                  menuBtns = document.querySelectorAll(".menu .lists li"),
-                  overlay = document.querySelector(".container .left");
-                  
-                  menuBtns.forEach((menuBtn) => {
-                      menuBtn.addEventListener("click", () => {
+                  workBar = document.querySelector(".work"),
+                  aboutBar = document.querySelector(".about");
+            var overlayWork = document.querySelector("section .overlay-work");
+
+                  workBar.addEventListener("click", () => {
+                      if (!navBar.classList.contains("open")) {
                           navBar.classList.toggle("open");
-                      });
+                        }
+                      if (overlayWork.style.opacity == 0) {
+                        overlayWork.style.opacity = 1;
+                        overlayWork.style.display = "block";
+                      }
+                  });
+                  aboutBar.addEventListener("click", () => {
+                      if (navBar.classList.contains("open")) {
+                          navBar.classList.remove("open");
+                      }
+                      if (overlayWork.style.opacity == 1) {
+                          overlayWork.style.opacity = 0;
+                          overlayWork.style.display = "none";
+                      }
                   });
                 </script>
     

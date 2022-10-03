@@ -153,16 +153,18 @@ nav .menu .lists li:hover .sub-menu {
 
 .right {
   margin-top: 4px;
+  margin-left: 0px;
   padding: 30px 40px;
   float: left;
   background: #fff;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   overflow: scroll;
   border: 0.1px solid #000;
   text-align: left;
   overflow-wrap: break-word;
   overflow-y: hidden;
+  max-width: fit-content;
 }
 
 section {
@@ -171,6 +173,49 @@ section {
   max-height: 1500px;
   height: 80%;
   overflow-y: hidden;
+  padding: 30px 10px;
+}
+section #contacts a {
+  text-decoration: none;
+  color: #000;
+}
+
+section .overlay-work {
+  display: none;
+  opacity: 0;
+  float: left;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  overflow: scroll;
+  overflow-wrap: break-word;
+  line-height: 1.6;
+  justify-content: center;
+}
+
+section .overlay-work .left-nav {
+  text-align: center;
+  height: 30vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  transition: all 0.3s ease;
+}
+
+section .overlay-work li a {
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+  flex-wrap: nowrap;
+}
+
+section .overlay-work a:hover {
+  text-decoration: underline;
+  text-decoration: underline;
+  color: #000;
 }
 
 nav.open ~ .container .left {
@@ -179,7 +224,7 @@ nav.open ~ .container .left {
 }
 
 nav.open ~ .container .right {
-  width: 1000vw;
+  margin-left: -50px;
   pointer-events: auto;
   transition: all 0.2s ease;
 }
